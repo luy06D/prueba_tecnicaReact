@@ -1,0 +1,28 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.conten{
+    display: flex;
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    justify-content: center;  /* Centra verticalmente los elementos*/
+    align-items: center; /* Centra horizontalmente los elementos*/
+    max-width: 90%;
+    margin: 0 auto;
+
+}
+
+h1, p{
+    text-align: center;
+}
+
+img {
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+ 
+}

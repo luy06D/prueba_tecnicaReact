@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import './App.css'
 
 // Constante que almacena el api endpoint
 const FACT_RAMDON = `https://catfact.ninja/fact`
@@ -30,10 +31,12 @@ export function App (){
 
     return(
         <main>
-            <h1>App de gatos xd</h1>
-            {fact && <p>{fact}</p>}
-            {imageUrl && <img src={`${imageUrl}`} alt={`Image extracted using the
-            first rhee words for ${fact}`} />}
+            <div className="conten">                
+                <h1>App de gatos xd</h1>
+                {fact && <p>{fact}</p>}
+                {imageUrl && <img src={`${imageUrl}`} alt={`Image extracted using the
+                first rhee words for ${fact}`} />}
+            </div>
         </main>
         
     )
