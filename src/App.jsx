@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 // Constante que almacena el api endpoint
@@ -18,21 +19,40 @@ export function App (){
             .then(data => {
                 const { fact } = data
                 setFact(fact)
-
-                const firstWord = fact.split(' ', 3).join(' ')                
-
-                fetch(`https://cataas.com/cat/gif/says/${firstWord}?filter=mono&fontColor=orange&fontSize=20&type=square`)
-                    .then(response => {                        
-                        const { url } = response
-                        setImageUrl(url)
-                    })     
             })
     }, [])
+
+    // Recuperar la imagen 
+    useEffect(() =>{
+        if(!fact) return
+
+        const firstWord = fact.split(' ', 3).join(' ')         
+
+        fetch(`https://cataas.com/cat/gif/says/${firstWord}?filter=mono&fontColor=orange&fontSize=20&type=square`)
+            .then(response => {                        
+                const { url } = response
+                setImageUrl(url)
+            }) 
+    }, [fact])
+
+    const handleClick = () =>{
+        fetch(FACT_RAMDON)
+        // Obtenemos la respuesta y la pasamos a formato JSON
+            .then(response => response.json())
+        // Accedemos al hecho
+            .then(data => {
+                const { fact } = data
+                setFact(fact)
+            })
+    }
+
+
 
     return(
         <main>
             <div className="conten">                
                 <h1>App de gatos xd</h1>
+                <button className="btn btn-primary"  onClick={handleClick}>Reset app</button>
                 {fact && <p>{fact}</p>}
                 {imageUrl && <img src={`${imageUrl}`} alt={`Image extracted using the
                 first rhee words for ${fact}`} />}

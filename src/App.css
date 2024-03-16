@@ -2,6 +2,8 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: antiquewhite;
     
 }
 
@@ -15,14 +17,20 @@ main{
 
 }
 
+button{
+    margin-top: 10px;
+}
+
 h1, p{
     text-align: center;
+    margin-top: 20px;
 }
 
 img {
     border-radius: 20px;
     max-width: 100%;
     height: auto;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
  
 }
