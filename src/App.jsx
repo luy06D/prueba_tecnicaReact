@@ -24,7 +24,7 @@ function useCatImg({fact}){
             }) 
     }, [fact])
     return {imgUrl}
-}
+} // Devuelve el ImgUrl 
 
 
 export function App (){
